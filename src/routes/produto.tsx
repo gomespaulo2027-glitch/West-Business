@@ -2,7 +2,7 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import { ArrowLeft, Check, Clock3, Ruler } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { images } from "@/config/images";
-import { delivery, products, site, fontStyles, sizeHints } from "@/config/site";
+import { delivery, products, site, fontStyles, sizeHints, formatKz } from "@/config/site";
 
 export const Route=createFileRoute("/produto")({validateSearch:(s:Record<string,unknown>)=>({produto:typeof s.produto==="string"?s.produto:undefined}),head:()=>({meta:[{title:`${site.name} — detalhes da peça`},{name:"description",content:"Detalhes, preços de referência e opções de personalização."}],links:[{rel:"canonical",href:"/produto"}]}),component:ProductPage});
 
