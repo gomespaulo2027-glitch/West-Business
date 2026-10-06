@@ -11,13 +11,13 @@ import { WhatsappCta } from "@/components/site/WhatsappCta";
 export const Route = createFileRoute("/faq")({
   head: () => ({
     meta: [
-      { title: "Perguntas frequentes — West Buniss" },
+      { title: "Perguntas frequentes — West Business" },
       {
         name: "description",
         content:
-          "Prazos, preços de referência, informação necessária para encomendar, pagamento e cancelamento das peças personalizadas West Buniss.",
+          "Prazos, preços de referência, informação necessária para encomendar, pagamento e cancelamento das peças personalizadas West Business.",
       },
-      { property: "og:title", content: "Perguntas frequentes — West Buniss" },
+      { property: "og:title", content: "Perguntas frequentes — West Business" },
       {
         property: "og:description",
         content: "Respostas sobre prazos, preços, encomenda e pagamento das peças personalizadas.",
@@ -46,7 +46,7 @@ function FaqPage() {
       </Accordion>
 
       <div className="mt-10">
-        <WhatsappCta message="Olá West Buniss! Tenho uma pergunta." label="Perguntar no WhatsApp" />
+        <WhatsappCta message="Olá West Business! Tenho uma pergunta." label="Perguntar no WhatsApp" />
       </div>
     </div>
   );
