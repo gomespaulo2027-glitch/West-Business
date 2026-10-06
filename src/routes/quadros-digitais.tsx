@@ -7,13 +7,13 @@ import { quadrosDigitais } from "@/config/site";
 export const Route = createFileRoute("/quadros-digitais")({
   head: () => ({
     meta: [
-      { title: "Quadros digitais (em breve) — West Buniss" },
+      { title: "Quadros digitais (em breve) — West Business" },
       {
         name: "description",
         content:
-          "A linha de quadros digitais personalizados da West Buniss está em preparação. Modelos, tamanhos e preços serão publicados quando a linha abrir.",
+          "A linha de quadros digitais personalizados da West Business está em preparação. Modelos, tamanhos e preços serão publicados quando a linha abrir.",
       },
-      { property: "og:title", content: "Quadros digitais — em breve na West Buniss" },
+      { property: "og:title", content: "Quadros digitais — em breve na West Business" },
       {
         property: "og:description",
         content:
@@ -59,7 +59,7 @@ function QuadrosPage() {
           </ul>
           <div className="mt-6 flex flex-col gap-3 sm:flex-row">
             <WhatsappCta
-              message="Olá West Buniss! Quero ser avisado quando os quadros digitais estiverem disponíveis."
+              message="Olá West Business! Quero ser avisado quando os quadros digitais estiverem disponíveis."
               label="Quero ser avisado"
             />
             <Button asChild variant="outline" size="lg">
