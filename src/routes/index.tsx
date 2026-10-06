@@ -1,6 +1,6 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { Clock3, Sparkles, Ruler } from "lucide-react";
-import heroFio from "@/assets/hero-fio.jpg";
+import heroFio from "@/assets/hero-fio.svg";
 import { Button } from "@/components/ui/button";
 import { ProductCard } from "@/components/site/ProductCard";
 import { WhatsappCta } from "@/components/site/WhatsappCta";
