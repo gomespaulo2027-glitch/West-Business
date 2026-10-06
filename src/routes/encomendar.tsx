@@ -8,13 +8,13 @@ export const Route = createFileRoute("/encomendar")({
   }),
   head: () => ({
     meta: [
-      { title: "Personalizar e encomendar — West Buniss" },
+      { title: "Personalizar e encomendar — West Business" },
       {
         name: "description",
         content:
           "Indica o nome, o tipo de peça, a cor, o tamanho em cm e o estilo de letra. O site prepara a mensagem de encomenda para enviar pelo WhatsApp.",
       },
-      { property: "og:title", content: "Personalizar a tua peça — West Buniss" },
+      { property: "og:title", content: "Personalizar a tua peça — West Business" },
       {
         property: "og:description",
         content:
