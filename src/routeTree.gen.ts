@@ -15,6 +15,7 @@ import { Route as EntregasETermosRouteImport } from './routes/entregas-e-termos'
 import { Route as FaqRouteImport } from './routes/faq'
 import { Route as FiosRouteImport } from './routes/fios'
 import { Route as QuadrosDigitaisRouteImport } from './routes/quadros-digitais'
+import { Route as ProdutoRouteImport } from './routes/produto'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
@@ -46,6 +47,11 @@ const QuadrosDigitaisRoute = QuadrosDigitaisRouteImport.update({
   path: '/quadros-digitais',
   getParentRoute: () => rootRouteImport,
 } as any)
+const ProdutoRoute = ProdutoRouteImport.update({
+  id: '/produto',
+  path: '/produto',
+  getParentRoute: () => rootRouteImport,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
@@ -54,6 +60,7 @@ export interface FileRoutesByFullPath {
   '/faq': typeof FaqRoute
   '/fios': typeof FiosRoute
   '/quadros-digitais': typeof QuadrosDigitaisRoute
+  '/produto': typeof ProdutoRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
@@ -62,6 +69,7 @@ export interface FileRoutesByTo {
   '/faq': typeof FaqRoute
   '/fios': typeof FiosRoute
   '/quadros-digitais': typeof QuadrosDigitaisRoute
+  '/produto': typeof ProdutoRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
@@ -81,6 +89,7 @@ export interface FileRouteTypes {
     | '/faq'
     | '/fios'
     | '/quadros-digitais'
+    | '/produto'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
@@ -89,6 +98,7 @@ export interface FileRouteTypes {
     | '/faq'
     | '/fios'
     | '/quadros-digitais'
+    | '/produto'
   id:
     | '__root__'
     | '/'
@@ -97,6 +107,7 @@ export interface FileRouteTypes {
     | '/faq'
     | '/fios'
     | '/quadros-digitais'
+    | '/produto'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
@@ -106,6 +117,7 @@ export interface RootRouteChildren {
   FaqRoute: typeof FaqRoute
   FiosRoute: typeof FiosRoute
   QuadrosDigitaisRoute: typeof QuadrosDigitaisRoute
+  ProdutoRoute: typeof ProdutoRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -162,6 +174,7 @@ const rootRouteChildren: RootRouteChildren = {
   FaqRoute: FaqRoute,
   FiosRoute: FiosRoute,
   QuadrosDigitaisRoute: QuadrosDigitaisRoute,
+  ProdutoRoute: ProdutoRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
