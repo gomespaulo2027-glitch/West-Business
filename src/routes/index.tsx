@@ -1,242 +1,37 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { Clock3, Sparkles, Ruler } from "lucide-react";
-import heroFio from "@/assets/hero-fio.svg";
+import { ArrowRight, Check, Clock3, Gift, Heart, Sparkles } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { ProductCard } from "@/components/site/ProductCard";
 import { WhatsappCta } from "@/components/site/WhatsappCta";
-import {
-  delivery,
-  fontStyles,
-  products,
-  quadrosDigitais,
-  site,
-} from "@/config/site";
+import { delivery, fontStyles, products, quadrosDigitais, site } from "@/config/site";
+import heroFio from "@/assets/hero-fio.svg";
 
-export const Route = createFileRoute("/")({
-  head: () => ({
-    meta: [
-      { title: "West Buniss — Fios e mascotes personalizados em Angola" },
-      {
-        name: "description",
-        content:
-          "Fios e mascotes personalizados com o teu nome, feitos à mão em Angola. Preços de referência em Kz, quatro estilos de letra e encomenda pelo WhatsApp.",
-      },
-      { property: "og:title", content: "West Buniss — Fios personalizados com o teu nome" },
-      {
-        property: "og:description",
-        content:
-          "Nomes transformados em peças elegantes para usar. Fios e mascotes personalizados, produção de 3 semanas a 1 mês.",
-      },
-      { property: "og:type", content: "website" },
-      { property: "og:url", content: "/" },
-      { name: "twitter:card", content: "summary_large_image" },
-    ],
-    links: [{ rel: "canonical", href: "/" }],
-  }),
-  component: Home,
-});
+export const Route=createFileRoute("/")({head:()=>({meta:[
+{title:"West Business — Fios e mascotes personalizados"},
+{name:"description",content:"Fios e mascotes personalizados: escolhe o nome, a cor, o tamanho e um estilo de letra de referência. Preços em Kz e encomenda por atendimento."},
+{property:"og:title",content:"West Business — peças personalizadas"},
+{property:"og:description",content:"Transforma um nome numa peça personalizada. Consulta preços de referência e inicia a encomenda."},
+{property:"og:type",content:"website"}],links:[{rel:"canonical",href:"/"}]}),component:Home});
 
-function Home() {
-  return (
-    <>
-      {/* HERO */}
-      <section className="relative overflow-hidden">
-        <div className="mx-auto grid max-w-6xl items-center gap-10 px-5 pb-16 pt-14 md:grid-cols-2 md:pb-24 md:pt-20">
-          <div className="fade-up">
-            <p className="eyebrow">{site.city}</p>
-            <h1 className="mt-4 font-display text-4xl leading-tight sm:text-5xl md:text-6xl">
-              Nomes transformados em <span className="text-gold">peças elegantes</span> para usar.
-            </h1>
-            <p className="mt-5 max-w-md text-base text-muted-foreground">
-              A West Buniss produz fios e mascotes personalizados peça por peça. Escolhe o nome, o
-              estilo de letra, a cor e o tamanho — nós tratamos do resto.
-            </p>
+function Home(){
+return <>
+<section className="border-b border-border">
+<div className="mx-auto grid max-w-7xl items-center gap-10 px-5 pb-16 pt-12 lg:grid-cols-[1.05fr_.95fr] lg:pb-24 lg:pt-20">
+<div><p className="eyebrow">West Business · personalização</p><h1 className="mt-4 max-w-2xl font-display text-5xl leading-[0.98] sm:text-6xl lg:text-7xl">O teu nome. <span className="text-gold">A tua peça.</span></h1><p className="mt-6 max-w-xl text-base leading-7 text-muted-foreground sm:text-lg">Transforma um nome numa peça personalizada. Escolhe o tipo, a cor, o tamanho e um estilo de letra de referência — depois confirma o preço com a administração.</p><div className="mt-8 flex flex-col gap-3 sm:flex-row"><Button asChild size="lg"><Link to="/encomendar">Personalizar a minha peça <ArrowRight className="size-4"/></Link></Button><Button asChild size="lg" variant="outline"><Link to="/fios">Ver coleção</Link></Button></div><div className="mt-7 flex flex-wrap gap-3 text-xs text-muted-foreground"><span className="inline-flex items-center gap-2 rounded-full border border-border px-3 py-2"><Clock3 className="size-3.5 text-gold"/>3 semanas a 1 mês</span><span className="inline-flex items-center gap-2 rounded-full border border-border px-3 py-2"><Sparkles className="size-3.5 text-gold"/>Personalização por encomenda</span></div></div>
+<div><img src={heroFio} alt="Pré-visualização ilustrativa de um fio personalizado" width="1600" height="1200" className="w-full rounded-2xl border border-border object-cover shadow-2xl"/></div>
+</div></section>
 
-            <div className="mt-7 flex flex-col gap-3 sm:flex-row">
-              <Button asChild size="lg">
-                <Link to="/encomendar">Personalizar a minha peça</Link>
-              </Button>
-              <Button asChild variant="outline" size="lg">
-                <Link to="/fios">Ver peças</Link>
-              </Button>
-            </div>
+<section className="mx-auto max-w-7xl px-5 py-16 sm:py-20"><div className="grid gap-4 md:grid-cols-3">{[["01","Personaliza","Escolhe nome, tipo, cor, tamanho e estilo de referência."],["02","Confirma","A administração confirma o valor final e o prazo."],["03","Produção","A produção começa após a confirmação do pagamento ou sinal."]].map(([n,t,d])=><div key={n} className="rounded-xl border border-border bg-card p-6"><span className="font-display text-3xl text-gold">{n}</span><h2 className="mt-3 font-display text-2xl">{t}</h2><p className="mt-2 text-sm leading-6 text-muted-foreground">{d}</p></div>)}</div></section>
 
-            <p className="mt-6 inline-flex items-center gap-2 rounded-full border border-border px-4 py-2 text-xs text-muted-foreground">
-              <Clock3 className="size-4 text-gold" aria-hidden />
-              {delivery.badge}
-            </p>
-          </div>
+<section className="mx-auto max-w-7xl px-5 py-6 sm:py-10"><div className="flex flex-wrap items-end justify-between gap-5"><div><p className="eyebrow">Coleção</p><h2 className="mt-2 font-display text-4xl">Escolhe a tua peça</h2></div><Link to="/fios" className="text-sm text-gold hover:underline">Ver catálogo →</Link></div><div className="mt-8 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">{products.map(p=><ProductCard key={p.slug} product={p}/>)}</div></section>
 
-          <div className="fade-up">
-            <img
-              src={heroFio}
-              alt="Fio dourado personalizado com o nome em letra cursiva, sobre seda azul-marinho"
-              width={1600}
-              height={1200}
-              className="w-full rounded-lg border border-border object-cover"
-            />
-          </div>
-        </div>
-      </section>
+<section className="mx-auto max-w-7xl px-5 py-20"><div className="grid gap-8 rounded-2xl border border-gold/15 bg-surface p-7 sm:p-10 lg:grid-cols-[.8fr_1.2fr]"><div><p className="eyebrow">Personalização</p><h2 className="mt-2 font-display text-4xl">Vê o teu nome antes de enviar.</h2><p className="mt-4 text-sm leading-6 text-muted-foreground">O formulário mostra uma simulação tipográfica e permite comparar as quatro referências de estilo. A simulação é apenas visual; a peça final é confirmada pela administração.</p><Button asChild className="mt-6"><Link to="/encomendar">Abrir personalizador</Link></Button></div><div className="grid gap-3 sm:grid-cols-2">{fontStyles.map(f=><div key={f.code} className="rounded-xl border border-border bg-background p-5"><div className="flex items-center justify-between gap-3"><span className="text-sm text-gold">{f.code}</span><span className="text-3xl text-gold-soft" style={{fontFamily:f.previewFamily,fontStyle:f.previewStyle}}>Nome</span></div><p className="mt-3 text-xs leading-5 text-muted-foreground">{f.description}</p></div>)}</div></div></section>
 
-      <div className="hairline mx-auto max-w-6xl" />
+<section className="mx-auto max-w-7xl px-5 py-8"><div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">{[[Heart,"Casal","Dois nomes numa mesma intenção."],[Gift,"Presente","Uma ideia personalizada para alguém especial."],[Sparkles,"Uso pessoal","O teu próprio nome como peça."],[Check,"Clareza","Preço final e prazo confirmados antes da produção."]].map(([Icon,title,text])=>{const I=Icon as typeof Heart;return <div key={title as string} className="rounded-xl border border-border p-5"><I className="size-5 text-gold"/><h3 className="mt-3 font-display text-xl">{title as string}</h3><p className="mt-1 text-sm text-muted-foreground">{text as string}</p></div>})}</div></section>
 
-      {/* CATEGORIAS */}
-      <section aria-labelledby="categorias" className="mx-auto max-w-6xl px-5 py-16">
-        <h2 id="categorias" className="font-display text-3xl">Categorias</h2>
-        <div className="mt-8 grid gap-5 md:grid-cols-3">
-          <CategoryCard
-            to="/fios"
-            title="Fios personalizados"
-            text="O nome em letra cursiva, com tamanho e cor à tua escolha."
-          />
-          <CategoryCard
-            to="/fios"
-            title="Mascotes"
-            text="Uma figura escolhida pelo cliente junto ao nome, com acabamento detalhado."
-          />
-          <CategoryCard
-            to="/quadros-digitais"
-            title={quadrosDigitais.name}
-            text="Nova linha em preparação. Modelos e preços serão publicados em breve."
-            badge={quadrosDigitais.badge}
-          />
-        </div>
-      </section>
+<section className="mx-auto max-w-7xl px-5 py-20"><div className="grid gap-10 lg:grid-cols-2"><div><p className="eyebrow">Preços</p><h2 className="mt-2 font-display text-4xl">Quanto custa?</h2><p className="mt-4 text-sm leading-6 text-muted-foreground">Os valores são referências. O preço final é confirmado pela administração conforme o comprimento do nome e a cor escolhida.</p></div><div className="grid gap-4 sm:grid-cols-2"><div className="rounded-xl border border-border bg-card p-6"><p className="eyebrow">Fios personalizados</p><p className="mt-2 font-display text-2xl">1 nome · 6.800 Kz</p><p className="mt-1 text-sm text-muted-foreground">2 nomes · 12.200 Kz</p></div><div className="rounded-xl border border-border bg-card p-6"><p className="eyebrow">Mascote</p><p className="mt-2 font-display text-2xl">1 nome · 8.000 Kz</p><p className="mt-1 text-sm text-muted-foreground">2 nomes · 14.500 Kz</p></div></div></div></section>
 
-      {/* FIOS DESTACADOS */}
-      <section aria-labelledby="destaques" className="mx-auto max-w-6xl px-5 py-10">
-        <div className="flex flex-wrap items-end justify-between gap-4">
-          <div>
-            <p className="eyebrow">Mais pedidos</p>
-            <h2 id="destaques" className="mt-2 font-display text-3xl">Fios e mascotes</h2>
-          </div>
-          <Button asChild variant="outline">
-            <Link to="/fios">Ver todas as peças</Link>
-          </Button>
-        </div>
-        <div className="mt-8 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-          {products.map((p) => (
-            <ProductCard key={p.slug} product={p} />
-          ))}
-        </div>
-      </section>
+<section className="mx-auto max-w-7xl px-5 py-8"><div className="rounded-2xl border border-border bg-card p-7 sm:p-10"><div className="flex flex-wrap items-center justify-between gap-5"><div><p className="eyebrow">Próxima categoria</p><h2 className="mt-2 font-display text-3xl">{quadrosDigitais.name}</h2><p className="mt-2 max-w-xl text-sm text-muted-foreground">{quadrosDigitais.intro}</p></div><Button asChild variant="outline"><Link to="/quadros-digitais">Ver “Em breve”</Link></Button></div></div></section>
 
-      {/* COMO FUNCIONA */}
-      <section aria-labelledby="como-funciona" className="mx-auto max-w-6xl px-5 py-16">
-        <p className="eyebrow">Processo</p>
-        <h2 id="como-funciona" className="mt-2 font-display text-3xl">Como funciona</h2>
-        <ol className="mt-8 grid gap-6 md:grid-cols-4">
-          {delivery.steps.map((s, i) => (
-            <li key={s.title} className="rounded-lg border border-border bg-card p-5">
-              <span className="font-display text-2xl text-gold">0{i + 1}</span>
-              <h3 className="mt-2 text-base">{s.title}</h3>
-              <p className="mt-2 text-sm text-muted-foreground">{s.text}</p>
-            </li>
-          ))}
-        </ol>
-      </section>
-
-      {/* ESTILOS DE LETRA */}
-      <section aria-labelledby="estilos" className="mx-auto max-w-6xl px-5 py-16">
-        <p className="eyebrow">Referências de letra</p>
-        <h2 id="estilos" className="mt-2 font-display text-3xl">Quatro estilos à escolha</h2>
-        <p className="mt-3 max-w-xl text-sm text-muted-foreground">
-          Indica o código do estilo no pedido. As pré-visualizações abaixo são uma aproximação
-          tipográfica — a peça final é trabalhada à mão.
-        </p>
-        <div className="mt-8 grid gap-5 sm:grid-cols-2">
-          {fontStyles.map((f) => (
-            <article key={f.code} className="rounded-lg border border-border bg-card p-6">
-              <div className="flex items-baseline justify-between gap-3">
-                <h3 className="text-base">
-                  <span className="text-gold">{f.code}</span> · {f.name}
-                </h3>
-                <span
-                  aria-hidden
-                  className="text-3xl text-gold-soft"
-                  style={{ fontFamily: f.previewFamily, fontStyle: f.previewStyle }}
-                >
-                  Nome
-                </span>
-              </div>
-              <p className="mt-3 text-sm text-muted-foreground">{f.description}</p>
-              <p className="mt-2 text-sm">
-                <Sparkles className="mr-1 inline size-3.5 text-gold" aria-hidden />
-                Recomendado para: {f.recommended}
-              </p>
-            </article>
-          ))}
-        </div>
-      </section>
-
-      {/* QUADROS DIGITAIS — TEASER */}
-      <section aria-labelledby="quadros" className="mx-auto max-w-6xl px-5 py-16">
-        <div className="rounded-lg border border-border bg-surface p-8">
-          <span className="rounded-full border border-gold/40 px-3 py-1 text-xs tracking-widest text-gold">
-            {quadrosDigitais.badge}
-          </span>
-          <h2 id="quadros" className="mt-4 font-display text-3xl">{quadrosDigitais.name}</h2>
-          <p className="mt-3 max-w-2xl text-sm text-muted-foreground">{quadrosDigitais.intro}</p>
-          <div className="mt-6">
-            <Button asChild variant="outline">
-              <Link to="/quadros-digitais">Saber mais</Link>
-            </Button>
-          </div>
-        </div>
-      </section>
-
-      {/* CTA FINAL */}
-      <section aria-labelledby="cta" className="mx-auto max-w-6xl px-5 py-16">
-        <div className="rounded-lg border border-border bg-card p-8 text-center">
-          <Ruler className="mx-auto size-6 text-gold" aria-hidden />
-          <h2 id="cta" className="mt-4 font-display text-3xl">Pronto para encomendar?</h2>
-          <p className="mx-auto mt-3 max-w-lg text-sm text-muted-foreground">
-            Preenche o formulário com o nome, a cor e o tamanho em cm. A mensagem é preparada para
-            enviar pelo WhatsApp e a administração confirma o preço final.
-          </p>
-          <div className="mt-6 flex flex-col items-center justify-center gap-3 sm:flex-row">
-            <Button asChild size="lg">
-              <Link to="/encomendar">Abrir formulário</Link>
-            </Button>
-            <WhatsappCta
-              variant="outline"
-              message="Olá West Buniss! Quero informações sobre um fio personalizado."
-              label="Falar no WhatsApp"
-            />
-          </div>
-        </div>
-      </section>
-    </>
-  );
-}
-
-function CategoryCard({
-  to,
-  title,
-  text,
-  badge,
-}: {
-  to: "/fios" | "/quadros-digitais";
-  title: string;
-  text: string;
-  badge?: string;
-}) {
-  return (
-    <Link
-      to={to}
-      className="group rounded-lg border border-border bg-card p-6 transition-colors hover:border-gold/50"
-    >
-      <div className="flex items-center justify-between gap-3">
-        <h3 className="font-display text-xl">{title}</h3>
-        {badge && (
-          <span className="rounded-full border border-gold/40 px-2.5 py-0.5 text-[0.65rem] tracking-widest text-gold">
-            {badge}
-          </span>
-        )}
-      </div>
-      <p className="mt-3 text-sm text-muted-foreground">{text}</p>
-      <span className="mt-4 inline-block text-sm text-gold">Ver mais →</span>
-    </Link>
-  );
-}
+<section className="mx-auto max-w-7xl px-5 py-20"><div className="rounded-2xl border border-gold/20 bg-surface p-8 text-center sm:p-12"><p className="eyebrow">Pronto?</p><h2 className="mt-2 font-display text-4xl">Começa pelo teu nome.</h2><p className="mx-auto mt-4 max-w-xl text-sm leading-6 text-muted-foreground">Preenche os dados essenciais. A administração confirma o preço final e o prazo antes da produção.</p><div className="mt-7 flex flex-col justify-center gap-3 sm:flex-row"><Button asChild size="lg"><Link to="/encomendar">Personalizar a minha peça</Link></Button><WhatsappCta variant="outline" message={`Olá ${site.name}! Quero informações sobre uma peça personalizada.`} label="Falar no WhatsApp"/></div></div></section>
+</>;}
