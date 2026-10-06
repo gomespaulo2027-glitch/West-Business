@@ -6,13 +6,13 @@ import { delivery, products, fontStyles } from "@/config/site";
 export const Route = createFileRoute("/fios")({
   head: () => ({
     meta: [
-      { title: "Fios e mascotes personalizados — West Buniss" },
+      { title: "Fios e mascotes personalizados — West Business" },
       {
         name: "description",
         content:
-          "Catálogo West Buniss: fios personalizados com 1 ou 2 nomes e mascotes personalizadas. Preços de referência em Kz e encomenda pelo WhatsApp.",
+          "Catálogo West Business: fios personalizados com 1 ou 2 nomes e mascotes personalizadas. Preços de referência em Kz e encomenda pelo WhatsApp.",
       },
-      { property: "og:title", content: "Fios e mascotes personalizados — West Buniss" },
+      { property: "og:title", content: "Fios e mascotes personalizados — West Business" },
       {
         property: "og:description",
         content:
