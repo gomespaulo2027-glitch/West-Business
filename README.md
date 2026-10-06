@@ -3,7 +3,7 @@
 Site em desenvolvimento para a West Business.
 
 ## Origem
-- Projeto Lovable: West Buniss Threads
+- Projeto Lovable original (nome anterior da marca): West Business
 - Lovable project ID: ca9f98f4-716f-4b7f-93fd-8184ddbddb31
 - Último commit no Lovable: ad85701ab0b757d13b3d895ac66757fb0839c7c7
 
