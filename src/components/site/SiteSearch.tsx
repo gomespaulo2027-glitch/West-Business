@@ -1,5 +1,4 @@
 import { useMemo, useState } from "react";
-import { Link } from "@tanstack/react-router";
 import { Search, X } from "lucide-react";
 import { faq, products } from "@/config/site";
 
