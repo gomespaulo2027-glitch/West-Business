@@ -5,17 +5,17 @@ import { WhatsappCta } from "@/components/site/WhatsappCta";
 export const Route = createFileRoute("/entregas-e-termos")({
   head: () => ({
     meta: [
-      { title: "Entregas e condições — West Buniss" },
+      { title: "Entregas e condições — West Business" },
       {
         name: "description",
         content:
           "Prazo de produção de 3 semanas a 1 mês, confirmação de preço pela administração, pagamento combinado por WhatsApp e condições de cancelamento.",
       },
-      { property: "og:title", content: "Entregas e condições — West Buniss" },
+      { property: "og:title", content: "Entregas e condições — West Business" },
       {
         property: "og:description",
         content:
-          "Como funcionam os prazos, o pagamento e o cancelamento das peças personalizadas da West Buniss.",
+          "Como funcionam os prazos, o pagamento e o cancelamento das peças personalizadas da West Business.",
       },
       { property: "og:type", content: "website" },
       { property: "og:url", content: "/entregas-e-termos" },
@@ -53,7 +53,7 @@ function EntregasPage() {
       </ul>
 
       <div className="mt-10">
-        <WhatsappCta message="Olá West Buniss! Tenho uma dúvida sobre prazos e pagamento." label="Esclarecer dúvida no WhatsApp" />
+        <WhatsappCta message="Olá West Business! Tenho uma dúvida sobre prazos e pagamento." label="Esclarecer dúvida no WhatsApp" />
       </div>
     </div>
   );
