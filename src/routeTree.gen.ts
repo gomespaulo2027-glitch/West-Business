@@ -79,6 +79,7 @@ export interface FileRoutesById {
   '/faq': typeof FaqRoute
   '/fios': typeof FiosRoute
   '/quadros-digitais': typeof QuadrosDigitaisRoute
+  '/produto': typeof ProdutoRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
